@@ -41,3 +41,8 @@
 - Data source: USGS/NASA elevation and imagery products.
 - Map display: Mark caution and avoid zones.
 - Planning response: Choose routes that avoid the steepest or roughest areas where possible.
+
+## Important limitation
+Environmental and terrain layers are for mission planning and education.
+They do not replace real-time astronaut safety systems, certified radiation dosimetry,
+or operational mission control.
