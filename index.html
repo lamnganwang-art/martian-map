@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jezero Route Planner</title>
+<link rel="stylesheet" href="libs/v10.11.0-package/ol.css">
+<link rel="stylesheet" href="style.css">
+<script src="libs/v10.11.0-package/dist/ol.js"></script>
+</head>
+<body>
+<div id="app">
+  <aside>
+    <h1>Jezero Route Planner</h1>
+    <p>Plan a rover traverse across Jezero Crater and check how steep it gets.</p>
+
+    <h2>Layers</h2>
+    <label><input type="checkbox" id="l-grid" checked> Coordinate grid</label>
+    <label><input type="checkbox" id="l-slope" checked> Slope</label>
+    <label><input type="checkbox" id="l-stops" checked> Science stops</label>
+
+    <h2>Slope legend</h2>
+    <div><span class="sw" style="background:#3fae5a"></span>Under 10° (gentle)</div>
+    <div><span class="sw" style="background:#e6ca2e"></span>10° to 20° (caution)</div>
+    <div><span class="sw" style="background:#d04030"></span>Over 20° (avoid)</div>
+
+    <h2>Route summary</h2>
+    <div class="row"><span>Distance</span><span id="s-dist">–</span></div>
+    <div class="row"><span>Steepest slope</span><span id="s-max">–</span></div>
+    <div class="row"><span>Path in caution / avoid</span><span id="s-share">–</span></div>
+    <div class="row"><span>Safety rating</span><span id="rating">–</span></div>
+    <button id="reset">Clear route</button>
+
+    <h2>Selected stop</h2>
+    <p id="stop-info">Click a marker to read why it matters.</p>
+
+    <h2>How to use</h2>
+    <ul>
+      <li>Click once to set the start, again to set the end.</li>
+      <li>Click a third time to start a new route.</li>
+      <li>Toggle layers above.</li>
+    </ul>
+    <p class="note">Demo build: the slope grid is synthetic. Replace it with real slope data and label its resolution (regional, not rover-scale).</p>
+  </aside>
+  <div id="map"></div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
